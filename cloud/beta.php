@@ -11,6 +11,6 @@
 
   dbQuery("INSERT INTO betaUsers (email) VALUES ('$email')");
 
-  echo('thanks for joining);
+  echo('thanks for joining');
 
 ?>

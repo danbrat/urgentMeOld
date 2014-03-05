@@ -11,9 +11,16 @@
 
   extract($_REQUEST);
 
-  $tableName = 'regUsers';
+  $tableName = "regUsers";
 
-  $fieldsArr = array("email"=>$email, "password"=>$password);
+  $fieldsArr = array(
+      "email"=>$email,
+      "password"=>$password
+      // "ip"=>$ip,
+      // "lat"=>$lat,
+      // "lon"=>$lon,
+      // "fullName"=>$fullName,
+      );
 
   // $fieldsArr = $_REQUEST
 
@@ -27,16 +34,16 @@
 
   $addNewFields = TRUE;
 
-  $sameEmails= dbMassData(“SELECT * FROM betaUsers WHERE email = ‘$email’”);
+  // $sameEmails= dbMassData(“SELECT * FROM betaUsers WHERE email = ‘$email’”);
 
-	if($sameEmails !=null){
+	// if($sameEmails !=null){
 
-	echo “That email address is already signed up. Good lookin’ out!\n”;
-	return;
-	}
+	// echo “That email address is already signed up. Good lookin’ out!\n”;
+	// return;
+	// }
 
 
-  function rollAdd($tableName, $fieldsArr, $checkExists, $print ,$checkAdded, $updateBool, $addNewFields, $sameEmails);
+  rollAdd($tableName, $fieldsArr, $checkExists, $print ,$checkAdded, $updateBool, $addNewFields);
 
 
   echo('thanks for joining');
